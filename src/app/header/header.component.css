@@ -1,0 +1,12 @@
+.ekart--head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ekart--name h1 {
+  color: rgb(137, 65, 65);
+  font-size: 50px;
+  padding: 0px;
+  margin: 0%;
+  width: 20%;
+}

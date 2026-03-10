@@ -1,0 +1,24 @@
+<app-filters-bot
+  [All]="allProducts"
+  [Instocks]="productAvilable"
+  [Outofstocks]="productNotAvilable"
+  (changedSlectedFilterButton)="filterChanged($event)"
+></app-filters-bot>
+
+<div class="product--container">
+  <ng-container *ngFor="let pro of items">
+    <!-- *ngIf="selectedFilterButton === 'all' ||pro.is_Avilable.toString() === selectedFilterButton" -->
+    <app-products
+      [products]="pro"
+      *ngIf="
+        (searchtext === '' ||
+          pro.name
+            .toLocaleLowerCase()
+            .includes(searchtext.toLocaleLowerCase())) &&
+        (selectedFilterButton === 'all' ||
+          pro.is_Avilable.toString() === selectedFilterButton)
+      "
+      (click)="selectProduct = pro"
+    ></app-products>
+  </ng-container>
+</div>

@@ -1,0 +1,75 @@
+<div
+  class="ekart--product-details--info scroll"
+  [appDisable]="!product.is_Avilable"
+>
+  <div class="ekart-product-detail-close">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </div>
+
+  <div class="ekart-product-detail-image">
+    <img [src]="product.imageUrl" alt="Michael Feburary SK8-Hi" />
+  </div>
+
+  <div class="ekart-product-detail">
+    <div class="ekart-product-detail-name">
+      <h2>{{ product.name }}</h2>
+    </div>
+
+    <div class="ekart-product-detail-gbc">
+      <span Background-color>{{ product.brand }}</span>
+      <span Background-color>{{ product.gender }}</span>
+      <span>{{ product.category }}</span>
+    </div>
+
+    <div class="ekart-product-detail-price">
+      <p>
+        <b>Price Each Pair:</b>
+        <span class="old-price" *ngIf="product.discountPrice">
+          {{ product.price | currency }}
+        </span>
+
+        <span class="new-price">{{ product.price | currency }}</span>
+        (Inclusive of all taxes)
+      </p>
+    </div>
+    <div class="ekart-product-detail-size">
+      <h4>Available Size</h4>
+      <div class="sizes">
+        <span
+          class="ekart-product-detail-available-size"
+          *ngFor="let size of product.size"
+        >
+          {{ size }}
+        </span>
+      </div>
+    </div>
+
+    <div class="ekart-product-detail-color">
+      <h4>Available Color</h4>
+      <div class="colors">
+        <span
+          class="ekart-product-detail-available-color"
+          *ngFor="let col of product.colors"
+          [ngStyle]="{ 'background-color': col }"
+        ></span>
+      </div>
+    </div>
+
+    <div class="ekart-product-detail-desc">
+      <h4>Product Description</h4>
+      <p>{{ product.description }}</p>
+    </div>
+
+    <div class="ekart-product-detail-addtoCart">
+      <button
+        class="btn-add-to-cart"
+        *ngIf="product.is_Avilable; else notifyButton"
+      >
+        ADD TO CART
+      </button>
+      <ng-template #notifyButton>
+        <button class="btn-add-to-cart">NOTIFY ME</button>
+      </ng-template>
+    </div>
+  </div>
+</div>

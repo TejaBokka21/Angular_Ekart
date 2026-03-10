@@ -1,0 +1,37 @@
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+.search--input {
+  width: 600px;
+  height: 30px;
+  padding-left: 10px;
+  background-color: rgb(142, 141, 141);
+  border-color: rgb(0, 0, 0);
+  color: white;
+  font-size: large;
+}
+
+.search--button {
+  background-color: black;
+
+  color: white;
+  width: 80px;
+  cursor: pointer;
+}
+.search--button--disable {
+  background-color: rgb(171, 158, 158);
+
+  color: rgb(94, 74, 74);
+  width: 80px;
+  cursor: not-allowed;
+}
+.search--button:hover {
+  background-color: rgba(0, 0, 0, 0.694);
+}
+.search--item {
+  position: relative;
+  left: 340px;
+  font-size: x-large;
+}

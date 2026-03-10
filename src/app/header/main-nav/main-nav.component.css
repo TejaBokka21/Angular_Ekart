@@ -1,0 +1,12 @@
+.side--nav {
+  display: flex;
+  gap: 20px;
+  justify-content: right;
+  padding-top: 10px;
+}
+.side--nav a {
+  color: rgb(0, 128, 255);
+}
+.side--nav a:hover {
+  color: rgb(43, 99, 156);
+}

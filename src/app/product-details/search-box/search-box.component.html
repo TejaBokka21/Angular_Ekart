@@ -1,0 +1,9 @@
+<div class="search-box">
+  <input class="search--input" #serachInput />
+  <button class="search--button" (click)="changeSearchtext()">Search</button>
+</div>
+<div>
+  <p class="search--item" *ngIf="searchtext != ''">
+    <strong>Search for:</strong>{{ searchtext }}
+  </p>
+</div>

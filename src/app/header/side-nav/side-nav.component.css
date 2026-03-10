@@ -1,0 +1,12 @@
+.main--nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 10px;
+}
+.main--nav a {
+  color: rgb(0, 128, 255);
+}
+.main--nav a:hover {
+  color: rgb(43, 99, 156);
+}

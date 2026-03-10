@@ -1,0 +1,29 @@
+<div class="product--list" [appDisable]="!products.is_Avilable">
+  <div class="product--image">
+    <div class="cart--symbol"><i class="fa-regular fa-heart"></i></div>
+    <p class="dicount" *ngIf="products.discount">
+      {{ products.discount }}% OFF
+    </p>
+    <p class="price-overlay">\${{ products.price }}</p>
+    <img [src]="products.imageUrl" width="200px" />
+  </div>
+
+  <div class="product-infromation">
+    <p>{{ products.brand }}. {{ products.category }}. {{ products.gender }}</p>
+  </div>
+
+  <div class="typesOf--product">
+    <span>{{ products.colors.length }} colors available </span>
+    <span>{{ products.itemsLeft }} items left</span>
+    <span>Best seller</span><br />
+    <span
+      [ngStyle]="{
+        color: products.is_Avilable ? 'green' : 'red',
+        fontWeight: 'bold'
+      }"
+      >{{
+        products.is_Avilable ? "Product Avilable" : "Product Not Avilable"
+      }}</span
+    >
+  </div>
+</div>

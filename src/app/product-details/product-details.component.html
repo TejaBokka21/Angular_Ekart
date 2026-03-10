@@ -1,0 +1,45 @@
+<!-- <img src="assets/Images/iphone.png" width="250px" />
+<p>Name : {{ product.pname }}</p>
+<p>Price : {{ "$" + product.price }}</p>
+<p>color : {{ product.Color }}</p>
+<p>Discount : {{ product.disc }}</p>
+<p>Discount price : {{ discountPrice().toFixed(0) }}</p>
+<p>
+  {{
+    product.stock > 0
+      ? "only" + product.stock + "items left!!"
+      : "No items are left"
+  }}
+</p>
+<div class="addto--cart">
+  <button (click)="decrementBtn()">-</button>
+  <span>{{ addToCart }}</span>
+  <button (click)="incrementBtn()">+</button>
+</div>
+<button [disabled]="!(product.stock > 0)">Buy Now</button>
+<input (input)="nameChangeOn($event)" /><br />
+<p>name: {{ userNmae }}</p> -->
+
+<search-box (onSerachTextChanged)="setserchtext($event)"></search-box>
+<product-items [searchtext]="searchtext" #productListComponents></product-items>
+<product-info
+  *ngIf="productListComponents.selectProduct"
+  [productListComp]="productListComponent"
+></product-info>
+<div class="ekart-featured-products">
+  <div class="ekart-featured-product-heading">
+    <h1>Latest Arriavls In the Stock</h1>
+  </div>
+  <feature-brands>
+    <h3 class="title">New Arrivals in Nike</h3>
+    <button class="call-to-action">Show me new Arrival in Nike</button>
+  </feature-brands>
+  <feature-brands>
+    <h3 class="title">New Arrivals in Adidas</h3>
+    <button class="call-to-action">Show me new Arrival in Adidas</button>
+  </feature-brands>
+  <feature-brands>
+    <h3 class="title">New Arrivals in Puma</h3>
+    <button class="call-to-action">Show me new Arrival in Puma</button>
+  </feature-brands>
+</div>
